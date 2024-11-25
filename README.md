@@ -99,16 +99,16 @@ Le projet met en œuvre des techniques avancées de **visualisation des données
 Voici un aperçu de notre tableau de bord interactif :
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Ventes:
-![Vue d'ensemble des indicateurs de performances de Ventes](C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Vente.png)
+![Vue d'ensemble des indicateurs de performances de Ventes]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Vente.png")
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Finance:
-![Vue d'ensemble des indicateurs de performances de Finance](C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Finance.png)
+![Vue d'ensemble des indicateurs de performances de Finance]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Finance.png")
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Logistique:
-![Vue d'ensemble des indicateurs de performances de Logistique](C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Logistique.png)
+![Vue d'ensemble des indicateurs de performances de Logistique]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Logistique.png")
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de RH:
-![Vue d'ensemble des indicateurs de performances de RH](C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/RH.png)
+![Vue d'ensemble des indicateurs de performances de RH]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/RH.png")
 
 ---
 
@@ -136,6 +136,8 @@ CREATE OR REPLACE VIEW Total AS (
 );
 SELECT * FROM Total;
 
+
+```
 ```sql
 create or replace view Total AS (
                               SELECT month(orderDate) AS mois, year(orderDate) AS ans, orderDate, productLine, productName, customerNumber, quantityOrdered, status, priceEach, comments, SUM(quantityOrdered*priceEach) AS CA_Total
@@ -155,7 +157,7 @@ create or replace view vendus_3 AS (
                               ); 
 SELECT *
  from vendus_3 ;
-
+```
 #### 2. **Requêtes SQL sur la Finance**:
 ```sql
 SELECT date_format(orderdate, "%Y-%m-01") as year_month_,
@@ -212,7 +214,7 @@ FROM products as p
 JOIN ca_produit ON ca_produit.productCode = p.productCode
 GROUP BY ca_produit.productCode,ca_produit.CA_par_produit,p.buyPrice
 ORDER BY taux_remises_MSRP DESC;
-
+```
 #### 3. **Requêtes SQL sur la logistique**:
 
 ```sql
@@ -273,7 +275,7 @@ SELECT
     Inventory_value.value_stock
 FROM stock2023
 JOIN Inventory_value USING (productName)
-
+```
 #### 4. **Requêtes SQL sur le RH**:
 
 ```sql
@@ -326,7 +328,7 @@ select *
 from customer_info)
 select *
 from poid_bussness;
-
+```
 
 ---
 
