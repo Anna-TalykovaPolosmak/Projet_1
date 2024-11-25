@@ -99,7 +99,7 @@ Le projet met en œuvre des techniques avancées de **visualisation des données
 Voici un aperçu de notre tableau de bord interactif :
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Ventes:
-![Vue d'ensemble des indicateurs de performances de Ventes]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Vente.png")
+![Vue d'ensemble des indicateurs de performances de Ventes]("https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/Vente.png")
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Finance:
 ![Vue d'ensemble des indicateurs de performances de Finance]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Finance.png")
