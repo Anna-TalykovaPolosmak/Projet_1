@@ -102,13 +102,15 @@ La visualisation suivante montre une vue d'ensemble des indicateurs de performan
 ![Vue d'ensemble des indicateurs de performances de Ventes](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/Vente.png)
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Finance:
-![Vue d'ensemble des indicateurs de performances de Finance]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Finance.png")
+![Vue d'ensemble des indicateurs de performances de Finance](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/Finance.png)
+![Vue d'ensemble des indicateurs de performances de Finance](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/In_Finance.png)
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Logistique:
-![Vue d'ensemble des indicateurs de performances de Logistique]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Logistique.png")
-
+![Vue d'ensemble des indicateurs de performances de Logistique](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/In_Logistique.png)
+![Vue d'ensemble des indicateurs de performances de Logistique](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/Logistique.png)
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de RH:
-![Vue d'ensemble des indicateurs de performances de RH]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/RH.png")
+![Vue d'ensemble des indicateurs de performances de RH](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/In_RH.png)
+![Vue d'ensemble des indicateurs de performances de RH](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/RH.png)
 
 ---
 
