@@ -99,16 +99,16 @@ Le projet met en œuvre des techniques avancées de **visualisation des données
 Voici un aperçu de notre tableau de bord interactif :
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Ventes:
-![Vue d'ensemble des indicateurs de performances de Ventes]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Vente.png")
+![Vue d'ensemble des indicateurs de performances de Ventes](C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Vente.png)
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Finance:
-![Vue d'ensemble des indicateurs de performances de Finance]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Finance.png")
+![Vue d'ensemble des indicateurs de performances de Finance](C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Finance.png)
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Logistique:
-![Vue d'ensemble des indicateurs de performances de Logistique]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Logistique.png")
+![Vue d'ensemble des indicateurs de performances de Logistique](C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Logistique.png)
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de RH:
-![Vue d'ensemble des indicateurs de performances de RH]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/RH.png")
+![Vue d'ensemble des indicateurs de performances de RH](C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/RH.png)
 
 ---
 
