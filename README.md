@@ -96,35 +96,45 @@ Le projet met en œuvre des techniques avancées de **visualisation des données
 
 ## Aperçu du tableau de bord
 
+Voici un aperçu de notre tableau de bord interactif :
 
-Voici un aperçu de notre tableau de bord interactif 
+La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Ventes:
+![Vue d'ensemble des indicateurs de performances de Ventes]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Vente.png")
 
-La visualisation suivante montre vue d'ensemble des indicateurs de performances de Ventes:
+La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Finance:
+![Vue d'ensemble des indicateurs de performances de Finance]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Finance.png")
 
-![Vue d'ensemble des indicateurs de performances de Ventes]("C:\Users\annat\OneDrive\Документы\GitHub\Projet_1\Vente.png")
+La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Logistique:
+![Vue d'ensemble des indicateurs de performances de Logistique]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Logistique.png")
 
-La visualisation suivante montre vue d'ensemble des indicateurs de performances de Finance:
-
-![Vue d'ensemble des indicateurs de performances de Finance]("C:\Users\annat\OneDrive\Документы\GitHub\Projet_1\Finance.png")
-("C:\Users\annat\OneDrive\Документы\GitHub\Projet_1\In_Finance.png")
-
-La visualisation suivante montre vue d'ensemble des indicateurs de performances de Logistique:
-
-![Vue d'ensemble des indicateurs de performances de Logistique]("C:\Users\annat\OneDrive\Документы\GitHub\Projet_1\In_Logistique.png")
-("C:\Users\annat\OneDrive\Документы\GitHub\Projet_1\Logistique.png")
-
-La visualisation suivante montre vue d'ensemble des indicateurs de performances de RH:
-
-![Vue d'ensemble des indicateurs de performances de RH]("C:\Users\annat\OneDrive\Документы\GitHub\Projet_1\RH.png")
-("C:\Users\annat\OneDrive\Документы\GitHub\Projet_1\In_RH.png")
-
+La visualisation suivante montre une vue d'ensemble des indicateurs de performances de RH:
+![Vue d'ensemble des indicateurs de performances de RH]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/RH.png")
 
 ---
 
-
 ### Requêtes SQL utilisées pour le tableau de bord
 
-1. **Requêtes SQL sur les Ventes**:
+#### 1. **Requêtes SQL sur les Ventes**:
+
+```sql
+CREATE OR REPLACE VIEW Total AS (
+    SELECT month(orderDate) AS mois, 
+           year(orderDate) AS ans, 
+           orderDate, 
+           productLine, 
+           productName, 
+           customerNumber, 
+           quantityOrdered, 
+           status, 
+           priceEach, 
+           comments, 
+           SUM(quantityOrdered * priceEach) AS CA_Total
+    FROM orders, orderdetails, products
+    WHERE (orders.orderNumber = orderdetails.orderNumber 
+           AND orderdetails.productCode = products.productCode) 
+    GROUP BY mois, ans, orderDate, productLine, productName, customerNumber, quantityOrdered, status, priceEach, comments
+);
+SELECT * FROM Total;
 
 ```sql
 create or replace view Total AS (
@@ -146,7 +156,7 @@ create or replace view vendus_3 AS (
 SELECT *
  from vendus_3 ;
 
-2. **Requêtes SQL sur la Finance**:
+#### 2. **Requêtes SQL sur la Finance**:
 ```sql
 SELECT date_format(orderdate, "%Y-%m-01") as year_month_,
 SUM(quantityOrdered * priceEach) AS CA_enregistre,
@@ -203,7 +213,7 @@ JOIN ca_produit ON ca_produit.productCode = p.productCode
 GROUP BY ca_produit.productCode,ca_produit.CA_par_produit,p.buyPrice
 ORDER BY taux_remises_MSRP DESC;
 
-3. **Requêtes SQL sur la logistique**:
+#### 3. **Requêtes SQL sur la logistique**:
 
 ```sql
 WITH country_employee AS (
@@ -264,7 +274,7 @@ SELECT
 FROM stock2023
 JOIN Inventory_value USING (productName)
 
-4. **Requêtes SQL sur le RH**:
+#### 4. **Requêtes SQL sur le RH**:
 
 ```sql
 with employees_chiffre_affaire as(
@@ -316,6 +326,7 @@ select *
 from customer_info)
 select *
 from poid_bussness;
+
 
 ---
 
