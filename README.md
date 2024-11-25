@@ -147,7 +147,7 @@ create or replace view Total AS (
                               );
 SELECT *
  from Total;
-
+```
 ```sql
 create or replace view vendus_3 AS (
                               SELECT month(orderDate) AS mois, year(orderDate) AS ans, orderDate, productLine, productName, customerNumber, quantityOrdered, status, priceEach, SUM(quantityOrdered*priceEach) AS CA
@@ -178,6 +178,7 @@ SUM(quantityOrdered * priceEach) AS CA_enregistre,
     JOIN orders ON orders.orderNumber = od.orderNumber
     GROUP BY year_month_
     ;
+```
 ```sql
 SELECT date_format(orderdate, "%Y-%m-01") as year_month_,
      SUM(quantityOrdered) AS qty_commandes_par_annee
@@ -185,6 +186,7 @@ SELECT date_format(orderdate, "%Y-%m-01") as year_month_,
     FROM orderdetails od
     JOIN orders ON orders.orderNumber = od.orderNumber
     GROUP BY year_month_;
+```
 ```sql
 WITH ca_produit AS(
 	SELECT productCode,
@@ -241,16 +243,16 @@ SELECT country_employee.lastname,
 FROM country_employee
 INNER JOIN ca_2023 ON country_employee.employeeNumber=ca_2023.salesRepEmployeeNumber
 ORDER BY ca DESC, country_employee.country;
-
+```
 ```sql
 SELECT orderNumber, orderDate, shippedDate, `status`,  comments, count(`status`)
 FROM `orders`
 WHERE `status` != 'Shipped'
 GROUP BY orderNumber, orderDate, shippedDate, `status`,  comments;
-
+```
 ```sql
 SELECT * from orders;
-
+```
 ```sql
 WITH stock2023 AS (
 		SELECT  productName,productline,
@@ -301,7 +303,7 @@ group by officecode)
 select *, count(*) over(partition by dates) as total_vendeur_actif_mois
 from employees_chiffre_affaire
 join total_emp_offices USING(officecode);
-
+```
 ```sql
 with
 customer_info as (
