@@ -99,16 +99,18 @@ Le projet met en œuvre des techniques avancées de **visualisation des données
 Voici un aperçu de notre tableau de bord interactif :
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Ventes:
-![Vue d'ensemble des indicateurs de performances de Ventes]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Vente.png")
+![Vue d'ensemble des indicateurs de performances de Ventes](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/Vente.png)
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Finance:
-![Vue d'ensemble des indicateurs de performances de Finance]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Finance.png")
+![Vue d'ensemble des indicateurs de performances de Finance](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/Finance.png)
+![Vue d'ensemble des indicateurs de performances de Finance](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/In_Finance.png)
 
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de Logistique:
-![Vue d'ensemble des indicateurs de performances de Logistique]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/Logistique.png")
-
+![Vue d'ensemble des indicateurs de performances de Logistique](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/In_Logistique.png)
+![Vue d'ensemble des indicateurs de performances de Logistique](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/Logistique.png)
 La visualisation suivante montre une vue d'ensemble des indicateurs de performances de RH:
-![Vue d'ensemble des indicateurs de performances de RH]("C:/Users/annat/OneDrive/Документы/GitHub/Projet_1/RH.png")
+![Vue d'ensemble des indicateurs de performances de RH](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/In_RH.png)
+![Vue d'ensemble des indicateurs de performances de RH](https://github.com/Anna-TalykovaPolosmak/Projet_1/blob/main/RH.png)
 
 ---
 
@@ -136,6 +138,8 @@ CREATE OR REPLACE VIEW Total AS (
 );
 SELECT * FROM Total;
 
+
+```
 ```sql
 create or replace view Total AS (
                               SELECT month(orderDate) AS mois, year(orderDate) AS ans, orderDate, productLine, productName, customerNumber, quantityOrdered, status, priceEach, comments, SUM(quantityOrdered*priceEach) AS CA_Total
@@ -145,7 +149,7 @@ create or replace view Total AS (
                               );
 SELECT *
  from Total;
-
+```
 ```sql
 create or replace view vendus_3 AS (
                               SELECT month(orderDate) AS mois, year(orderDate) AS ans, orderDate, productLine, productName, customerNumber, quantityOrdered, status, priceEach, SUM(quantityOrdered*priceEach) AS CA
@@ -155,7 +159,7 @@ create or replace view vendus_3 AS (
                               ); 
 SELECT *
  from vendus_3 ;
-
+```
 #### 2. **Requêtes SQL sur la Finance**:
 ```sql
 SELECT date_format(orderdate, "%Y-%m-01") as year_month_,
@@ -176,6 +180,7 @@ SUM(quantityOrdered * priceEach) AS CA_enregistre,
     JOIN orders ON orders.orderNumber = od.orderNumber
     GROUP BY year_month_
     ;
+```
 ```sql
 SELECT date_format(orderdate, "%Y-%m-01") as year_month_,
      SUM(quantityOrdered) AS qty_commandes_par_annee
@@ -183,6 +188,7 @@ SELECT date_format(orderdate, "%Y-%m-01") as year_month_,
     FROM orderdetails od
     JOIN orders ON orders.orderNumber = od.orderNumber
     GROUP BY year_month_;
+```
 ```sql
 WITH ca_produit AS(
 	SELECT productCode,
@@ -212,7 +218,7 @@ FROM products as p
 JOIN ca_produit ON ca_produit.productCode = p.productCode
 GROUP BY ca_produit.productCode,ca_produit.CA_par_produit,p.buyPrice
 ORDER BY taux_remises_MSRP DESC;
-
+```
 #### 3. **Requêtes SQL sur la logistique**:
 
 ```sql
@@ -239,16 +245,16 @@ SELECT country_employee.lastname,
 FROM country_employee
 INNER JOIN ca_2023 ON country_employee.employeeNumber=ca_2023.salesRepEmployeeNumber
 ORDER BY ca DESC, country_employee.country;
-
+```
 ```sql
 SELECT orderNumber, orderDate, shippedDate, `status`,  comments, count(`status`)
 FROM `orders`
 WHERE `status` != 'Shipped'
 GROUP BY orderNumber, orderDate, shippedDate, `status`,  comments;
-
+```
 ```sql
 SELECT * from orders;
-
+```
 ```sql
 WITH stock2023 AS (
 		SELECT  productName,productline,
@@ -273,7 +279,7 @@ SELECT
     Inventory_value.value_stock
 FROM stock2023
 JOIN Inventory_value USING (productName)
-
+```
 #### 4. **Requêtes SQL sur le RH**:
 
 ```sql
@@ -299,7 +305,7 @@ group by officecode)
 select *, count(*) over(partition by dates) as total_vendeur_actif_mois
 from employees_chiffre_affaire
 join total_emp_offices USING(officecode);
-
+```
 ```sql
 with
 customer_info as (
@@ -326,7 +332,7 @@ select *
 from customer_info)
 select *
 from poid_bussness;
-
+```
 
 ---
 
